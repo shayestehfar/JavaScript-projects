@@ -3,6 +3,7 @@
 // Get elements
 const startBtn = document.querySelector(".start-btn");
 const messageBox = document.querySelector(".message");
+const imgContainerEl = document.querySelector(".img-container");
 messageBox.innerText = "Click on the box to start";
 
 //Init when start button clicked
@@ -32,12 +33,24 @@ function randomArr(arr) {
 // and container and loc and img classes
 const imgArr = randomArr([1, 2, 3, 4, 5, 6]);
 for (let i = 0; i < 6; i++) {
+  //
+  const flipBox = document.createElement("div");
+  flipBox.classList.add("flip-box");
+  imgContainerEl.appendChild(flipBox);
+
+  //
+  const flipBoxFront = document.createElement("div");
+  flipBoxFront.classList.add("flip-box-front");
+  flipBox.appendChild(flipBoxFront);
+
+  const flipBoxBack = document.createElement("div");
+  flipBoxBack.classList.add("flip-box-back");
+  flipBox.appendChild(flipBoxBack);
+
+  //
   const imgEl = document.createElement("img");
-
-  const imgContainerEl = document.querySelector(".img-container");
-  imgContainerEl.appendChild(imgEl);
+  flipBoxFront.appendChild(imgEl);
   imgEl.src = `/img/${imgArr[i]}.jpg`;
-
   imgEl.classList.add(`loc${i}`);
   imgEl.classList.add(`img${imgArr[i]}`);
   imgEl.classList.add("img");

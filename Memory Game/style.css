@@ -44,22 +44,16 @@ header {
 .try {
   border-style: 1px solid red;
   min-width: 20%;
-  /* background-color: blanchedalmond; */
   font-size: 2rem;
   align-self: center;
   padding: 1rem;
 }
 .img-container {
   margin: 0 auto;
-  border: 2px solid red;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 900px;
-  position: relative;
 }
-/* .img {
-  z-index: 1000;
-} */
+
 .loc0,
 .loc1,
 .loc2,
@@ -67,4 +61,23 @@ header {
 .loc4,
 .loc5 {
   opacity: 0;
+}
+/* //////////////////////////////////////////////////////// */
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
 }
